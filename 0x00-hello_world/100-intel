@@ -1,0 +1,2 @@
+#!/bin/bash
+echo $CFILE <<< cut -d "." -f1 | gcc $CFILE -S -masm=intel
