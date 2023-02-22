@@ -26,5 +26,5 @@ else if (last_digit < 6 && last_digit != 0)
 printf("Last digit of %i is %i and is", n, last_digit);
 printf(" less than 6 and not 0\n");
 }
-    return (0);
+return (0);
 }
