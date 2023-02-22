@@ -7,5 +7,5 @@ Task 5 - Prints all single digits number from 0
 Task 6 - Prints all single digits number without using printf
 Task 7 - Print all alphabets in reverse order
 Task 8 - Prints all numbers in base 16
-Task 9 -
+Task 9 - Print all possible combination of single digits seperated by commas
 Task 100 -
