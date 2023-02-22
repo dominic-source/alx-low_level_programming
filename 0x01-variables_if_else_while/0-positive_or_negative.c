@@ -4,8 +4,8 @@
 
 /**
  * main - main prints out the sign and number of a random number
- * Description - a function to print a random number with it signs in words
- * Return - return's zero
+ * Description: a function to print a random number with it signs in words
+ * Return: return's zero
  */
 int main(void)
 {
