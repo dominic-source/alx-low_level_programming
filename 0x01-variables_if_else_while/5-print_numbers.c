@@ -9,7 +9,6 @@
 int main(void)
 {
 int i = 0;
-int base = 10;
 
 while (i < 10)
 {
