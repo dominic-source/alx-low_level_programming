@@ -8,7 +8,12 @@
 int main(void)
 {
 char str[] = "_putchar";
+int i = 0;
 
-_putchar(str);
+while (i < 8)
+{
+_putchar(str[i]);
+i++;
+}
 return (0);
 }
