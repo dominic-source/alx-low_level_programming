@@ -1,2 +1,2 @@
 #include <stdio.h>
-#include "_putchar.c"
+void _putchar(char);
