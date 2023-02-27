@@ -13,14 +13,15 @@ int count = 48;
 int k = 0;
 int m;
   
-  printf("%i, %i", i, j); 
-  while(k < count)
-    {
-      m = j + i;
-      i = j;
-      j = m;
-      printf(", %i", j);
-      k++;
-    }
-  printf("\n");
+printf("%i, %i", i, j); 
+while(k < count)
+{
+m = j + i;
+i = j;
+j = m;
+printf(", %i", j);
+k++;
+}
+printf("\n");
+return (0);
 }
