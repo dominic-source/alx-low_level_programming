@@ -1,9 +1,0 @@
-#include "main.h"
-
-/**
- * add - Adds two integers
- * Descreption: Add function adds two integers and produces a result
- * Return: result of addition
- * @n: this argument is an integer required
- */
-int add(int, int)
