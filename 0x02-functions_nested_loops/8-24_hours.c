@@ -8,31 +8,21 @@
  */
 void jack_bauer(void)
 {
-int hr = 2, hrs = 3, min = 5, mins = 9;
+int hr = 23, min = 59;
 int i = 0;
 
 while (i <= hr)
 {
-int j = 0;
-while (j <= hrs)
-{
 int k = 0;
 while (k <= min)
 {
-int l = 0;
-while (l <= mins)
-{
-_putchar('0' + i);
-_putchar('0' + j);
+_putchar('0' + (i / 10));
+_putchar('0' + (i % 10));
 _putchar(':');
-_putchar('0' + k);
-_putchar('0' + l);
+_putchar('0' + (k / 10));
+_putchar('0' + (k % 10));
 _putchar('\n');
-l++;
-}
 k++;
-}
-j++;
 }
 i++;
 }
