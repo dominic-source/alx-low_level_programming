@@ -16,22 +16,30 @@ while (k <= j)
 {
 if (((i * k) / 10) == 0)
 {
-_putchar('0' + (i * k));
-if(k != 9)
+if (k != 0)
 {
 _putchar(',');
 _putchar(' ');
 _putchar(' ');
+_putchar('0' + (i * k));
+}
+else
+{
+_putchar('0' + k);
 }
 }
 else
 {
-_putchar('0' + (i * k) / 10);
-_putchar('0' + (i * k) % 10);
-if(k != 9)
+if (k != 0)
 {
 _putchar(',');
 _putchar(' ');
+_putchar('0' + (i * k) / 10);
+_putchar('0' + (i * k) % 10);
+}
+else
+{
+_putchar('0' + k);
 }
 }
 k++;
