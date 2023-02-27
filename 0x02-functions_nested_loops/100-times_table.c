@@ -4,11 +4,12 @@
  * print_times_table - display n times table
  * Description: A function that prints out all the n times table
  * Return: void
- */
+ * @n: an integer 
+*/
 void print_times_table(int n)
 {
 int i = 0;
-if( n < 15 && n > 0)
+if (n < 15 && n > 0)
 {
 while (i <= n)
 {
@@ -20,15 +21,13 @@ if (((i * k) / 10) == 0)
 if (k != 0)
 {
 _putchar(',');
-_putchar(' ');
-_putchar(' ');
-_putchar(' ');
+printf("   ");
 _putchar('0' + (i * k));
 }
 else
 _putchar('0' + k);
 }
-else if(((i * k) / 100) == 0)
+else if (((i * k) / 100) == 0)
 {
 if (k != 0)
 {
@@ -55,4 +54,6 @@ _putchar('\n');
 i++;
 }
 }
+else if (n == 0)
+_putchar('0');
 }
