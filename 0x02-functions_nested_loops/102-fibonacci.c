@@ -7,19 +7,19 @@
  */
 int main(void)
 {
-unsigned i = 1;
-unsigned j = 2;
+unsigned long i = 1;
+unsigned long j = 2;
 int count = 48;
 int k = 0;
-unsigned m;
+unsigned long m;
 
-printf("%u, %u", i, j);
+printf("%lu, %lu", i, j);
 while (k < count)
 {
 m = j + i;
 i = j;
 j = m;
-printf(", %u", j);
+printf(", %lu", j);
 k++;
 }
 printf("\n");
