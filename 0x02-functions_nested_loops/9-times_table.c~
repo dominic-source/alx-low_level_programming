@@ -1,0 +1,8 @@
+#include "main.h"
+
+/**
+ * times_table - display 9 times table
+ * Description: A function that prints out all the 9 times table following a format
+ * Return: void
+ */
+void times_table(void
