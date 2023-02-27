@@ -5,7 +5,7 @@ void __putchar(int);
  * print_times_table - display n times table
  * Description: A function that prints out all the n times table
  * Return: void
- * @n: an integer 
+ * @n: an integer
 */
 void print_times_table(int n)
 {
@@ -55,6 +55,12 @@ else if (n == 0)
 _putchar('0');
 }
 
+/**
+ * __putchar - prints spaces
+ * Description: A function to prints spaces
+ * Return: void
+ * @n: an integer
+ */
 void __putchar(int n)
 {
 if (n == 2)
