@@ -10,11 +10,11 @@ int main(void)
 {
 int i = 0;
 int result = 0;
-int value = 1024 ;
+int value = 1024;
 
 while (i < value)
 {
-if ((i % 3) == 0 || (i % 5)== 0)
+if ((i % 3) == 0 || (i % 5) == 0)
 result += i;
 i++;
 }
