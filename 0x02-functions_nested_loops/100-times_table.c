@@ -1,5 +1,6 @@
 #include "main.h"
 
+void __putchar(int);
 /**
  * print_times_table - display n times table
  * Description: A function that prints out all the n times table
@@ -20,8 +21,7 @@ if (((i * k) / 10) == 0)
 {
 if (k != 0)
 {
-_putchar(',');
-printf("   ");
+__putchar(3);
 _putchar('0' + (i * k));
 }
 else
@@ -31,9 +31,7 @@ else if (((i * k) / 100) == 0)
 {
 if (k != 0)
 {
-_putchar(',');
-_putchar(' ');
-_putchar(' ');
+__putchar(2);
 _putchar('0' + (i * k) / 10);
 _putchar('0' + (i * k) % 10);
 }
@@ -42,8 +40,7 @@ _putchar('0' + k);
 }
 else
 {
-_putchar(',');
-_putchar(' ');
+__putchar(1);
 _putchar('0' + (i * k) / 100);
 _putchar('0' + ((i * k) / 10) % 10);
 _putchar('0' + (i * k) % 10);
@@ -56,4 +53,26 @@ i++;
 }
 else if (n == 0)
 _putchar('0');
+}
+
+void __putchar(int n)
+{
+if (n == 2)
+{
+_putchar(',');
+_putchar(' ');
+_putchar(' ');
+}
+else if (n == 3)
+{
+_putchar(',');
+_putchar(' ');
+_putchar(' ');
+_putchar(' ');
+}
+else if (n == 1)
+{
+_putchar(',');
+_putchar(' ');
+}
 }
