@@ -13,13 +13,13 @@ int count = 48;
 int k = 0;
 unsigned m;
 
-printf("%ul, %ul", i, j);
+printf("%u, %u", i, j);
 while (k < count)
 {
 m = j + i;
 i = j;
 j = m;
-printf(", %ul", j);
+printf(", %u", j);
 k++;
 }
 printf("\n");
