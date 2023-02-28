@@ -12,13 +12,7 @@ int i = 0;
 while (i < 26)
 {
 if (c == 'A' + i)
-{
 return (1);
-}
-if (c == 'a' + i)
-{
-return (0);
-}
 i++;
 }
 return (0);
