@@ -15,7 +15,7 @@ int i = 0;
 
 while (i <= 14)
 {
-if (i > 10)
+if (i > 9)
 {
 _putchar('0' + (i / 10));
 }
