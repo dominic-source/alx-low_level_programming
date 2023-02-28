@@ -6,7 +6,7 @@
  * Return: void
  * @void: no argument
  */
-void main(void)
+int main(void)
 {
 int i;
 printf("1");
@@ -22,5 +22,5 @@ else
 printf(" %i", i);
 }
 printf("\n");
-return;
+return (0);
 }
