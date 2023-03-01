@@ -21,7 +21,7 @@ else
 {
 while (j <= length)
 {
-_putchar(*(s + (length - j)));
+_putchar(*(s + (length - 1 - j)));
 j++;
 }
 _putchar('\n');
