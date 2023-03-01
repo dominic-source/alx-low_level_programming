@@ -2,7 +2,6 @@
 
 /**
  * reset_to_98 - a function to reset value to 98
- * 
  * Return: Nothing.
  * @n: function parameter
  */
