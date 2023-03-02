@@ -10,8 +10,8 @@ void rev_string(char *s)
 int i = 0;
 int length = 0;
 int j = 0;
-char n[10];
-
+char n;
+char m;
 while (i >= 0)
 {
 if (*(s + i) != '\0')
@@ -21,15 +21,12 @@ i++;
 }
 else
 {
-while (j <= length - 1)
+while (j <= (length / 2) - 1)
 {
-*(n + j) = *(s + length - 1 - j);
-j++;
-}
-j = 0;
-while (j <= length - 1)
-{
-*(s + j) = *(n + j);
+n = *(s + length - 1 - j);
+m = *(s + j);
+*(s + length - 1 - j) = m;
+*(s + j) = n;
 j++;
 }
 return;
