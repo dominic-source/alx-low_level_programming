@@ -20,16 +20,13 @@ m++;
 }
 j = len_dest;
 k = 0;
-if (n != 0)
-{
+
 while (j < (len_dest + n))
 {
 *(dest + j) = *(src + k);
 j++;
 k++;
 }
-}
-else
-return (dest);  
+  
 return (dest);
 }
