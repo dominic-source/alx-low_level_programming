@@ -27,6 +27,6 @@ while (j < (len_dest + n))
 j++;
 k++;
 }
-  
+
 return (dest);
 }
