@@ -21,9 +21,8 @@ i++;
 else
 {
 if (length % 2 != 0)
-{
-++length;
-}
+j = (length / 2) + 1;
+else
 j = (length / 2);
 while (j < length)
 {
