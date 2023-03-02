@@ -8,15 +8,14 @@
  */
 void print_array(int *a, int n)
 {
-int i = 1;
-if (a[n] != EOF)
-{
-printf("%i", a[0]);
+int i = 0;
 while (i < n)
 {
+if (i == 0)
+printf("%i", a[i]);
+else
 printf(", %i", a[i]);
 i++;
-}
 }
 printf("\n");
 }
