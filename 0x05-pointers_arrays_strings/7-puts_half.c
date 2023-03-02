@@ -25,7 +25,7 @@ if (length % 2 != 0)
 ++length;
 }
 j = (length / 2);
-while (j <= length)
+while (j < length)
 {
 _putchar(*(str + j));
 j++;
