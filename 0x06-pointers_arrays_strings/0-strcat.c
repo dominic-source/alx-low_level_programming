@@ -8,25 +8,22 @@
  */
 char *_strcat(char *dest, char *src)
 {
-int i = 0;
 int len_dest = 0;
 int len_src = 0;
-int j, k;
-
-while (i > -1)
+int j, k, m;
+ 
+m = 0;
+while (*(src + m) != '\0')
 {
-if (*(src + i) != '\0' || *(src + i) != '\0')
-{
-if (*(src + i) != '\0')
 len_src++;
-else
-return (dest);
-if (*(dest + i) != '\0')
-len_dest++;
-i++;
+m++;
 }
-else
+m = 0;
+while (*(dest + m) != '\0')
 {
+len_dest++;
+m++;
+}
 j = len_dest;
 k = 0;
 while (j < (len_dest + len_src))
@@ -36,8 +33,5 @@ j++;
 k++;
 }
 *(dest + (len_dest + len_src)) = '\0';
-return (dest);
-}
-}
 return (dest);
 }
