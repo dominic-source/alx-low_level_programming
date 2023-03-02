@@ -23,10 +23,14 @@ k = 0;
 
 while (j < (len_dest + n))
 {
+if (*(src + k) != '\0')
+{
 *(dest + j) = *(src + k);
 j++;
 k++;
 }
-
+else
+return (dest);
+}
 return (dest);
 }
