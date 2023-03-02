@@ -9,11 +9,14 @@
 void print_array(int *a, int n)
 {
 int i = 1;
+if (a[n] != EOF)
+{
 printf("%i", a[0]);
 while (i < n)
 {
 printf(", %i", a[i]);
 i++;
+}
 }
 printf("\n");
 }
