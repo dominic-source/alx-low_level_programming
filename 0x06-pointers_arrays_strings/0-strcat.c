@@ -19,6 +19,8 @@ if (*(src + i) != '\0' || *(src + i) != '\0')
 {
 if (*(src + i) != '\0')
 len_src++;
+else
+return (dest);
 if (*(dest + i) != '\0')
 len_dest++;
 i++;
