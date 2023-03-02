@@ -33,6 +33,7 @@ while (j < (len_dest + len_src))
 j++;
 k++;
 }
+*(dest + (len_dest + len_src)) = '\0';
 return (dest);
 }
 }
