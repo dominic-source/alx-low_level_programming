@@ -8,7 +8,7 @@
  */
 int main(void)
 {
-    char str[] = "a.aa hkmm?l\n";
+    char str[] = "";
     char *ptr;
 
     ptr = cap_string(str);

@@ -17,14 +17,10 @@ while (*(str + i) != '\0')
 for (k = 0; k < 12; k++)
 {
 if (p[k] == *(str + i))
-{
 value = 1;
-}
 }
 if (i == 0)
-{
 value = 1;
-}
 while (value)
 {
 j = 0;
