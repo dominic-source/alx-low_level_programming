@@ -21,6 +21,10 @@ if (p[k] == *(str + i))
 value = 1;
 }
 }
+if (i == 0)
+{
+value = 1;
+}
 while (value)
 {
 j = 0;
@@ -30,12 +34,10 @@ if ((*(str + i + 1) == ('a' + j))&&(i != 0))
 {
 *(str + i + 1) = *(str + i + 1) - 32;
 }
-else if ((*(str + i) == ('a' + j))&&(i == 0))
-{
-*(str + i) = *(str + i) - 32;
-}
 else if ((*(str + i + 1) == ('a' + j))&&(i == 0))
 *(str + i + 1) = *(str + i + 1) - 32;
+else if ((*(str + i) == ('a' + j))&&(i == 0))
+*(str + i) = *(str + i) - 32;
 else
 j++;
 }
