@@ -25,7 +25,7 @@ break;
 }
 else
 {
-printf("%ld\n",j);
+
 value = j;
 break;
 }
