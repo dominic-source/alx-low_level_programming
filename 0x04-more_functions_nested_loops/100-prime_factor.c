@@ -7,12 +7,14 @@
  */
 int main(void)
 {
-long int i = 612852475143;
-long int value = 1;
-long int j;
-long int k;
+unsigned long int i = 612852475143;
+unsigned long int value = 1;
+unsigned long int j;
+unsigned long int k;
+
 for (j = 1; j < i; j++)
 {
+
 if ((i % j) == 0)
 {
 for (k = 2; k < j; k++)
@@ -23,12 +25,14 @@ break;
 }
 else
 {
+
 value = j;
+break;
 }
 }
 }
 }
-printf("%li\n", value);
+printf("%lu\n", value);
 return (0);
 }
 
