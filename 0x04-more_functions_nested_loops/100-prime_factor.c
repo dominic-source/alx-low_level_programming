@@ -14,10 +14,10 @@ long int k;
 for (j = 1; j < i; j++)
 {
 if ((i % j) == 0)
-{  	  
+{
 for (k = 2; k < j; k++)
 {
-if ((j % k) == 0 )
+if ((j % k) == 0)
 {
 break;
 }
