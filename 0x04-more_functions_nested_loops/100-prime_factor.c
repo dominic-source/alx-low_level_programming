@@ -8,31 +8,17 @@
 int main(void)
 {
 long int i = 612852475143;
-long int value = 1;
 long int j;
-long int k;
-
-for (j = 3; j < i; j = j + 2)
+j = 2;
+while (j <= i)
 {
-
-if ((i % j) == 0)
+while (i % j == 0)
 {
-for (k = 2; k < j; k++)
-{
-if ((j % k) == 0)
-{
-break;
+i = i / j;
 }
-else
-{
-
-value = j;
-break;
+j++;
 }
-}
-}
-}
-printf("%ld\n", value);
+printf("%ld\n", j);
 return (0);
 }
 
