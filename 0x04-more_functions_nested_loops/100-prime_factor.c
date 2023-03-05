@@ -8,7 +8,7 @@
 int main(void)
 {
 long int i = 612852475143;
-long int j;
+int j;
 j = 2;
 while (j <= i)
 {
@@ -16,9 +16,9 @@ while (i % j == 0)
 {
 i = i / j;
 }
-j++;
+++j;
 }
-printf("%ld\n", j);
+printf("%i\n", --j);
 return (0);
 }
 
