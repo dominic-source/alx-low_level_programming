@@ -8,15 +8,21 @@
  */
 int main(void)
 {
-int i;
-
-for (i = -1; i < 9; i++)
+int i, j;
+for (i = 0; i < 10; i++)
 {
-putchar('1' + i);
-if (i < 8)
+for (j = 0; j < 10; j++)
+{
+if (i < j)
+{
+if (j != 1)
 {
 putchar(',');
 putchar(' ');
+}
+putchar('0' + i);
+putchar('0' + j);
+}
 }
 }
 putchar('\n');
