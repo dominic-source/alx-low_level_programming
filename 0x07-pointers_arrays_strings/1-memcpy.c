@@ -1,7 +1,7 @@
 #include "main.h"
 
 /**
- * memcpy - copies n bytes from src address to dest address
+ * _memcpy - copies n bytes from src address to dest address
  * Return: a pointer to a char
  * @dest: a pointer to a char destination address
  * @src: a pointer to a char src
@@ -10,9 +10,9 @@
 char *_memcpy(char *dest, char *src, unsigned int n)
 {
 unsigned int i = 0;
-while (src[i] != '\0')
+while (i < n)
 {
-if (i < n)
+if (src[i] != '\0')
 {
 *(dest + i) = *(src + i);
 i++;
