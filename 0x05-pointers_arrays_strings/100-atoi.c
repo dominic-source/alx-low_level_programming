@@ -7,38 +7,21 @@
  */
 int _atoi(char *s)
 {
-  int i = 0;
-  int j;
-  int *m = &j;
-  int k = 0;
-  while (i > -1)
-    {
-     
-      if(*(s + i) > 47 && *(s + i) < 58)
-	{
-	  k++;
-	  *(m + k) = *(s + i);
-	  i++;
-	  if(*(s + i + 1) > 47 && *(s + i + 1) < 58){
-	    return (*m);
-	  }
-	}
-      else if(*(s + i) == '-')
-	{
-	 *m *= -1; 
-	 i++;
-	}
-      else if (*(s + i) == '+')
-	{
-	 *m *= 1;
-	 i++;
-	}
-      else if (*(s + i) == '\0')
-	{
+int i = 0;
+int m = 1;
+int k = 0;
+while (s[i] != '\0')
+{
+if (*(s + i) >= '0' && *(s + i) <= '9')
+{
+k = (*(s + i) - 48) + k * 10;
+if (*(s + i + 1) == ' ')
+break;
+}
+else if (*(s + i) == '-')
+m *= -1;
 
-	  printf("My integer is: %i", *m);
-  return (0);
-	}
-    }
-
+i++;
+}
+return (k *m);
 }
