@@ -12,7 +12,7 @@ unsigned int i = 0;
 while (s[i] != c)
 {
 if (s[i] == '\0')
-  return (NULL);
+return (NULL);
 i++;
 }
 return (&s[i]);
