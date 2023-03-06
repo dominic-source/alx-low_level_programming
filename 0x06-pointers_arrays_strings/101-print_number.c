@@ -3,15 +3,16 @@
 /**
  * print_number - print number
  * Return: Nothing
- * @n: an integer
+ * @m: an integer
  */
-void print_number(int n)
+void print_number(int m)
 {
-
-if (n < 0)
+unsigned int n;
+n = m;
+if (m < 0)
 {
 _putchar('-');
-n *= -1;
+n = -m;
 }
 
 if (n / 10 != 0)
