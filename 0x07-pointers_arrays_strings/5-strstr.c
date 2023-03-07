@@ -14,11 +14,11 @@ while (i > -1)
 j = 0;
 while (j > -1)
 {
-if (needle[i] == haystack[j])
-return (haystack + j);
+if (needle[i] != haystack[j + i])
+break;
 else if (haystack[j] == '\0')
 {
-break;
+return (haystack + j);
 }
 j++;
 }
