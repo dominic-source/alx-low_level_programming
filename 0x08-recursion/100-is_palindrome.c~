@@ -1,0 +1,42 @@
+#include "main.h"
+int reverse(char *s, char *c, int i, int *j);
+
+/**
+ * is_palindrome - checks if a string reads the same forward as backward
+ * Return: 1 if palindrome and 0 if not
+ * @s: string argument
+ */
+int is_palindrome(char *s)
+{
+  int *j;
+  *j = 0;
+  if (*s == '\0')
+    return (1);
+  
+  return (reverse(s, &s[1], 0, j));
+}
+
+/**
+ * reverse - checks if a string reads the same forward as backward
+ * Return: 1 if palindrome and 0 if not
+ * @s: string argument
+ */
+int reverse(char *s, char *c, int i, int *j)
+{
+  int res;
+  /* base case */
+  if (c[1] == '\0' && (s[i] == c[0]))
+    return (1);
+
+  res = reverse(s, &c[1], i + 1, j);  
+  if (s[++j] != c[0])
+    {
+    return (0);
+    }
+    else
+    {
+   
+  return (1);
+}
+  return (res);
+}  
