@@ -22,7 +22,7 @@ else
 for (i = 1; i < argc; i++)
 {
 
-if (atoi(argv[i]) != 0 || *argv[i] == '0')
+if ((atoi(argv[i]) != 0 && atoi(argv[i]) > 0) || *argv[i] == '0')
 {
 value += atoi(argv[i]);
 }
