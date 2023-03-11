@@ -7,7 +7,8 @@
  */
 int main(int argc, char *argv[])
 {
-int i, j, k, m, sign1 = 1, sign2 = 1, value1_ = 0, value2_ = 0;
+unsigned int i, j, k, m, value1_ = 0, value2_ = 0;
+int sign1 = 1, sign2 = 1;
 if (argc > 3 || argc == 1)
 {
 printf("Error\n");
