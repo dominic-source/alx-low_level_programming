@@ -5,7 +5,7 @@ void change_cent(int *pnt_count, int *pnt_cent, int *pnt_tmp);
  * main - print minimum number of change
  * Return: always zero
  * @argc: counts of argument
- * @argv: array of argument(s) 
+ * @argv: array of argument(s)
  */
 int main(int argc, char *argv[])
 {
@@ -41,7 +41,7 @@ return (0);
  */
 void change_cent(int *pnt_count, int *pnt_cent, int *pnt_tmp)
 {
-if (*pnt_cent  > 25 )
+if (*pnt_cent  > 25)
 {
 *pnt_count += *pnt_cent / 25;
 *pnt_tmp = *pnt_cent % 25;

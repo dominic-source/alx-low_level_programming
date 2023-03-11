@@ -9,7 +9,7 @@ void change_cent(int *pnt_count, int *pnt_cent, int *pnt_tmp);
  */
 int main(int argc, char *argv[])
 {
-int cent = atoi(argv[1]);
+int cent;
 int count = 0;
 int tmp;
 int *pnt_count = &count;
@@ -21,6 +21,7 @@ if (!(argc == 2))
 printf("Error\n");
 return (1);
 }
+cent = atoi(argv[1]);
 if (cent < 0)
 {
 printf("0\n");
@@ -28,8 +29,8 @@ printf("0\n");
 else
 {
 change_cent(pnt_count, pnt_cent, pnt_tmp);
-}
 printf("%i\n", count);
+}
 return (0);
 }
 /**
