@@ -7,9 +7,8 @@
  */
 int main(int argc, char *argv[])
 {
-unsigned int i, j, k, m, value1_ = 0, value2_ = 0;
-int sign1 = 1, sign2 = 1;
-if (argc > 3 || argc == 1)
+int sign1 = 1, sign2 = 1, i, j, k, m, value1_ = 0, value2_ = 0;
+if (argc > 3 || argc == 1 || argc == 2)
 {
 printf("Error\n");
 return (1);
@@ -23,10 +22,7 @@ sign1 = -1;
 for (j = 0; j < 10; j++)
 {
 if (argv[1][i] == j + '0')
-{
 value1_ = value1_ * 10 + j;
-break;
-}
 }
 }
 value1_ = (value1_ *sign1);
@@ -37,10 +33,7 @@ sign2 = -1;
 for (m = 0; m < 10; m++)
 {
 if (argv[2][k] == m + '0')
-{
 value2_ = value2_ * 10 + m;
-break;
-}
 }
 }
 value2_ = (value2_ *sign2);
