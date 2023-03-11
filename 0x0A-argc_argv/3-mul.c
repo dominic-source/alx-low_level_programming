@@ -9,7 +9,7 @@ int main(int argc, char *argv[])
 {
 int i, j, k, m, sign1 = 1, sign2 = 1, value1_ = 0, value2_ = 0;
 if (argc > 3 || argc == 1)
-printf("Error");
+printf("Error\n");
 else
 {
 for (i = 0; argv[1][i] != '\0'; i++)
