@@ -13,10 +13,15 @@ int i;
 int value = 0;
 if (argc == 1)
 printf("0\n");
+else if (atoi(argv[1]) == 0)
+{
+printf("0\n");
+}
 else
 {
 for (i = 1; i < argc; i++)
 {
+
 if (atoi(argv[i]) != 0 || *argv[i] == '0')
 {
 value += atoi(argv[i]);
