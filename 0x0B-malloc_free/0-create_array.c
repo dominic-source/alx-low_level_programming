@@ -14,7 +14,7 @@ char *array_char;
 unsigned int i;
 if (size == 0)
 return (NULL);
-array_char = malloc(sizeof(array_char) * size);
+array_char = malloc(sizeof(char) * size);
 if (array_char == NULL)
 return (NULL);
 for (i = 0; i < size; i++)
