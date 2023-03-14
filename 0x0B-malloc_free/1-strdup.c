@@ -16,11 +16,11 @@ size_t i = 0;
 if (str == NULL)
 return (NULL);
 
-my_str = malloc(sizeof(char) * strlen(str));
+my_str = malloc(sizeof(char) * (strlen(str) + 1));
 if (my_str == NULL)
 return (NULL);
 
-for (i = 0; i < strlen(str); ++i)
+for (i = 0; i <= strlen(str); i++)
 {
 my_str[i] = str[i];
 }
