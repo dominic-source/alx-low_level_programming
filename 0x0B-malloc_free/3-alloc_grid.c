@@ -27,7 +27,7 @@ for (i = 0; i < height; i++)
 my_dim_arr[i] = malloc(sizeof(**my_dim_arr) * width);
 if (my_dim_arr[i] == NULL)
 {
-free(my_dim_arr[i];
+free(my_dim_arr[i]);
 return (NULL);
 }
 for (j = 0; j < width; j++)
