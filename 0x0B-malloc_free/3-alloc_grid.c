@@ -29,5 +29,6 @@ return (NULL);
 for (j = 0; j < width; j++)
 my_dim_arr[i][j] = 0;
 }
+free(my_dim_arr);
 return (my_dim_arr);
 }
