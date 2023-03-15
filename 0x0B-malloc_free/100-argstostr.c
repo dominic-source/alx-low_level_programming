@@ -18,8 +18,7 @@ size_t len = 0, m;
 if (ac == 0 || av == NULL)
 return (NULL);
 
-
- new_str = malloc(sizeof(char) * ac * ac - (2 * ac));
+new_str = malloc(sizeof(char) * ac * ac - ac);
 if (new_str == NULL)
 return (NULL);
 
