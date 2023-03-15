@@ -22,7 +22,7 @@ return (NULL);
 
 for (k = 0; k < width; k++)
 {
-my_dim_arr[k] = malloc(sizeof(**my_dim_arr) * width);
+my_dim_arr[k] = malloc(sizeof(int) * width);
 if (my_dim_arr[k] == NULL)
 return (NULL);
 }
