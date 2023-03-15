@@ -19,7 +19,7 @@ if (ac == 0 || av == NULL)
 return (NULL);
 
 
-new_str = malloc(sizeof(char) * ac * (ac - 2));
+ new_str = malloc(sizeof(char) * ac * ac - (2 * ac));
 if (new_str == NULL)
 return (NULL);
 
