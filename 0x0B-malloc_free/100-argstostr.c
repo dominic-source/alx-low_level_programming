@@ -14,11 +14,17 @@ char *argstostr(int ac, char **av)
 int l;
 char *new_str;
 size_t len = 0, m;
+int val;
 
 if (ac == 0 || av == NULL)
 return (NULL);
 
-new_str = malloc(sizeof(char) * (ac - 1) * (ac - 1) - 1);
+if (ac == 1)
+val = 1;
+else
+val = ac * (ac - 1) - 1;
+
+new_str = malloc(sizeof(char) * val);
 if (new_str == NULL)
 return (NULL);
 
