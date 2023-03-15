@@ -23,13 +23,11 @@ return (NULL);
 for (i = 0; i < height; i++)
 {
 my_dim_arr[i] = malloc(sizeof(**my_dim_arr) * width);
-
-if (my_dim_arr == NULL)
-return (NULL);
-
 for (j = 0; j < width; j++)
 my_dim_arr[i][j] = 0;
 }
+if (*my_dim_arr == NULL)
+return (NULL);
 
 return (my_dim_arr);
 }
