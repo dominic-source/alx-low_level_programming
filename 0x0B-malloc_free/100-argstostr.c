@@ -22,7 +22,7 @@ return (NULL);
 if (ac == 1)
 val = 1;
 else
-val = ac * ac - 4;
+val = ac * (ac - 1);
 
 new_str = malloc(sizeof(char) * val);
 if (new_str == NULL)
