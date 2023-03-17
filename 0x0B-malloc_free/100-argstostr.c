@@ -19,8 +19,8 @@ int val;
 if (ac == 0 || av == NULL)
 return (NULL);
 
-if (ac == 1)
-val = 1;
+if (ac <= 3)
+val = ac * (ac - 1);
 else
 val = (ac - 1) * (ac - 1) - 4;
 

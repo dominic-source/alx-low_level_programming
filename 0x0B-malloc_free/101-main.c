@@ -25,14 +25,14 @@ void print_tab(char **tab)
  */
 int main(void)
 {
-    char **tab;
+  char **tab;
 
-    tab = strtow("      ALX School         #cisfun      ");
+     tab = strtow("      ALX School         #cisfun      ");
     if (tab == NULL)
     {
         printf("Failed\n");
         return (1);
     }
     print_tab(tab);
-    return (0);
+return (0);
 }
