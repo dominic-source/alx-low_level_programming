@@ -30,7 +30,7 @@ len_s1 = strlen(s1);
 size = len_s1 + n + 1;
 
 str = malloc(sizeof(char) * size);
-str = realloc(str, size);
+
 if (str == NULL || n >= INT_MAX)
 return (NULL);
 
