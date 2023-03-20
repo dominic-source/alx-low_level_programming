@@ -1,0 +1,15 @@
+#include <stdlib.h>
+#include <string.h>
+#include <stdio.h>
+
+int _putchar(char c);
+
+int main (void)
+{
+size_t i;
+char file[] = __FILE__;
+for (i = 0; i < strlen(file); i++)
+_putchar(file[i]); 
+_putchar('\n');
+return (0);  
+}
