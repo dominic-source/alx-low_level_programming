@@ -15,4 +15,5 @@ return;
 }
 
 free(d);
+ free(d->name);
 }
