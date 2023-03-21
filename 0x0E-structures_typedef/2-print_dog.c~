@@ -1,0 +1,11 @@
+#include "dog.h"
+
+/**
+ * print_dog - prints dobf struct
+ * @d: a struct pointer
+ * Return: Nothing
+ */
+void print_dog(struct dog *d)
+{
+
+}
