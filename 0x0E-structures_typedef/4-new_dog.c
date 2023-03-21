@@ -29,7 +29,7 @@ new_dog->owner = owner;
 new_dog->age = age;
 
 cpy_dog->name = new_dog->name;
-cyp_dog->owner = new_dog->owner;
+cpy_dog->owner = new_dog->owner;
 
 return (new_dog);
 }
