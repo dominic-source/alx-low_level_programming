@@ -19,10 +19,16 @@ cpy_dog = malloc(sizeof(char *) + sizeof(char *));
 new_dog = malloc(sizeof(dog_t));
 
 if (cpy_dog == NULL)
+{
+free(cpy_dog);
 return (NULL);
+}
 
 if (new_dog == NULL)
+{
+free(new_dog);
 return (NULL);
+}
 
 new_dog->name = name;
 new_dog->owner = owner;
