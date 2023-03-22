@@ -38,7 +38,7 @@ new_ptr = malloc(old_size + sizeof(*new_ptr));
 if (new_ptr == NULL)
 return (NULL);
 
-for (i = 0; i < old_size; i++)
+for (i = 0; i < old_size/sizeof(*new_ptr); i++)
 new_ptr[i] = _ptr[i];
 
 free (ptr);
