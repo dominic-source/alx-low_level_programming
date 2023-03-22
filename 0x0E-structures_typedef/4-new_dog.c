@@ -25,14 +25,16 @@ return (NULL);
 }
 
 new_dog->name = malloc(sizeof(*(new_dog->name)) * size_name);
+if (new_dog->name == NULL)
 {
-free(new_dog->name);
+free(new_dog);
 return (NULL);
 }
 
 new_dog->owner = malloc(sizeof(*(new_dog->owner)) * size_owner);
 if (new_dog->owner == NULL)
 {
+free(new_dog);
 free(new_dog->owner);
 return (NULL);
 }
