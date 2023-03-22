@@ -20,7 +20,6 @@ int size_owner = strlen(owner) + 1;
 new_dog = malloc(sizeof(dog_t));
 if (new_dog == NULL)
 {
-free(new_dog);
 return (NULL);
 }
 
@@ -35,7 +34,7 @@ new_dog->owner = malloc(sizeof(char) * size_owner);
 if (new_dog->owner == NULL)
 {
 free(new_dog);
-free(new_dog->owner);
+free(new_dog->name);
 return (NULL);
 }
 
