@@ -36,8 +36,8 @@ free(new_dog->owner);
 return (NULL);
 }
 
-*new_dog->name = *name;
-*new_dog->owner = *owner;
+new_dog->name = name;
+new_dog->owner = owner;
 new_dog->age = age;
 
 return (new_dog);
