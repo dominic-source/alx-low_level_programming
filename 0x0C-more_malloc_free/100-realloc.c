@@ -34,16 +34,12 @@ return (NULL);
 }
 else if (new_size > old_size)
 {
-  new_ptr = malloc(old_size + sizeof(*new_ptr));
-
-  for (i = 0; i <= ((old_size + sizeof(*new_ptr))/sizeof(*new_ptr)); i++)
-  {
-
-    new_ptr[i] = _ptr[i];
-    printf ("-------i got here ----4-4-4--\n");
-  }
+new_ptr = malloc(old_size + sizeof(*new_ptr));
 if (new_ptr == NULL)
 return (NULL);
+
+for (i = 0; i < old_size; i++)
+new_ptr[i] = _ptr[i];
 
 free (ptr);
 }
@@ -54,11 +50,8 @@ if (new_ptr == NULL)
 return (NULL);
 
 for (i = 0; i < (new_size/sizeof(*new_ptr)); i++)
-  {new_ptr[i] = _ptr[i];
-printf ("-------i got here ----5-5-5--\n");
-  }
- free (ptr);
+new_ptr[i] = _ptr[i];
+free (ptr);
 }
-printf ("-------i got here ---- finally --\n");
- return ((void *)new_ptr);
+return ((void *)new_ptr);
 }
