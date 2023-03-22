@@ -1,7 +1,7 @@
 #include <stddef.h>
 #include "function_pointers.h"
-#include <string.h>
 #include <stdlib.h>
+#include <string.h>
 /**
  * print_name - print name
  * @name: name of person
@@ -15,6 +15,6 @@ if (n_name == NULL)
 return;
 
 strcpy(n_name, name);
-f(n_name);
+(*f)(n_name);
 free(n_name);
 }
