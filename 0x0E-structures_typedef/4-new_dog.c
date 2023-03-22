@@ -18,26 +18,25 @@ int size_name = strlen(name) + 1;
 int size_owner = strlen(owner) + 1;
 
 new_dog = malloc(sizeof(dog_t));
-new_dog->name = malloc(sizeof(*(new_dog->name)) * size_name);
-new_dog->owner = malloc(sizeof(*(new_dog->owner)) * size_owner);
-
 if (new_dog == NULL)
 {
 free(new_dog);
 return (NULL);
 }
 
-if (new_dog->name == NULL)
+new_dog->name = malloc(sizeof(*(new_dog->name)) * size_name);
 {
 free(new_dog->name);
 return (NULL);
 }
 
+new_dog->owner = malloc(sizeof(*(new_dog->owner)) * size_owner);
 if (new_dog->owner == NULL)
 {
 free(new_dog->owner);
 return (NULL);
 }
+
 strcpy(new_dog->name, name);
 strcpy(new_dog->owner, owner);
 new_dog->age = age;
