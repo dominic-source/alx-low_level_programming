@@ -14,10 +14,11 @@ unsigned int i;
 char *arg;
 
 va_start(pa, n);
-for (i = 0; i < n; i++)
-{
 if (separator != NULL)
 {
+for (i = 0; i < n; i++)
+{
+
 arg = va_arg(pa, char *);
 if (arg != NULL)
 {
@@ -29,7 +30,7 @@ printf("%s", arg);
 else
 printf("(nil)");
 }
-
-}
 printf("\n");
+}
+
 }
