@@ -11,7 +11,7 @@
 int main(int argc, char *argv[])
 {
 int (*my_fun)(int, int);
-int result;
+int result, i;
 char c;
 
 if (argc != 4)
@@ -20,7 +20,8 @@ printf("Error\n");
 exit(98);
 }
 c = *argv[2];
-if (!(c == '+' || c == '-' || c == '*' || c == '/' || c == '%') || strlen(argv[2]) > 1)
+i = strlen(argv[2]);
+if (!(c == '+' || c == '-' || c == '*' || c == '/' || c == '%') || i > 1)
 {
 
 printf("Error\n");
