@@ -1,0 +1,32 @@
+/**
+ * op_add - add two integers
+ * @a: first number
+ * @b: second number
+ * Return: sum
+ */
+int op_add(int a, int b)
+{
+return (a + b);
+}
+
+/**
+ * op_sub - subtract two numbers
+ * @a: first number
+ * @b: second number
+ * Return: difference
+ */
+int op_sub(int a, int b)
+{
+return (a - b);
+}
+
+/**
+ * op_mul - multiply two numbers
+ * @a: first number
+ * @b: second number
+ * Return: product
+ */
+int op_mul(int a, int b)
+{
+return (a * b);
+}
