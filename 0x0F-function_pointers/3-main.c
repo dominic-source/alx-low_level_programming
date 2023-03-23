@@ -34,7 +34,7 @@ exit(100);
 my_fun = get_op_func(argv[2]);
 result = my_fun(atoi(argv[1]), atoi(argv[3]));
 
-if (result == NULL)
+if (my_fun == NULL)
 {
 printf("Error\n");
 exit(101);
