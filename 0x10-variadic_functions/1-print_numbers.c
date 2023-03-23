@@ -21,7 +21,6 @@ if (i != 0)
 {
 if (separator != NULL)
 printf("%s", separator);
-printf(" ");
 }
 
 printf("%i", va_arg(ag, int));
