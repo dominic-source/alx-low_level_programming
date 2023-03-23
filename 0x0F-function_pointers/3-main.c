@@ -1,7 +1,7 @@
 #include <stdio.h>
 #include "3-calc.h"
 #include <stdlib.h>
-
+#include <string.h>
 /**
  * main - performs simple operations
  * @argc: argument count
@@ -20,7 +20,7 @@ printf("Error\n");
 exit(98);
 }
 c = *argv[2];
-if (!(c == '+' || c == '-' || c == '*' || c == '/' || c == '%'))
+if (!(c == '+' || c == '-' || c == '*' || c == '/' || c == '%') || strlen(argv[2]) > 1)
 {
 
 printf("Error\n");
