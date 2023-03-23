@@ -27,8 +27,6 @@ printf("%s", separator);
 }
 printf("%s", arg);
 }
-else
-printf("(nil)");
 }
 printf("\n");
 }
