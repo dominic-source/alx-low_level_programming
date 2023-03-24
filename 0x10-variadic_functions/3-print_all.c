@@ -12,6 +12,7 @@ void print_all(const char * const format, ...)
 va_list arg;
 int i = 0;
 char *s = "";
+char *v;
 
 va_start(arg, format);
 
@@ -32,7 +33,15 @@ case 'f':
 printf("%s%f", s, (float)va_arg(arg, double));
 break;
 case 's':
-printf("%s%s", s, va_arg(arg, char *));
+v = va_arg(arg, char *);
+if (v == NULL)
+{
+printf("%s(nil)", s);
+break;
+}
+printf("%s%s", s, v);
+break;
+default:
 break;
 }
 i++;
