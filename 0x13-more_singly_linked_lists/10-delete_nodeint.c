@@ -30,12 +30,12 @@ int delete_nodeint_at_index(listint_t **head, unsigned int index)
 		free(del);
 		return (1);
 	}
-	for (i = 0; (i < index - 1) && hold != NULL; i++)
-		hold = &((*head)->next);
-	if (*hold == NULL && i < index - 1)
+	for (i = 0; i < index && *hold != NULL; i++)
+		hold = &((*hold)->next);
+	if (*hold == NULL && i < index)
 		return (-1);
-	del = (*hold)->next;
-	(*hold)->next = (*hold)->next->next;
+	del = *hold;
+	*hold = (*hold)->next;
 	free(del);
 	return (1);
 }
