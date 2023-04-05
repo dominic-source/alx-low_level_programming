@@ -26,22 +26,25 @@ i++;
 else if (str[i] != ' ' && str[i + 1] != ' ')
 {
 if (count <= count_n)
+{
 words[count][m] = str[i];
 m++;
+}
 i++;
 }
 else if (str[i] != ' ' && str[i + 1] == ' ')
 {
-if (count < count_n)
+if (count <= count_n)
 {
-words[count][m++] = str[i];
+words[count][m] = str[i];
+m++;
 m = 0;
 }
 count++;
 i++;
 }
 }
-words[count++] = '\0';
+words[++count] = '\0';
 return (words);
 }
 
@@ -100,13 +103,13 @@ malc = 0;
 ++(*count);
 }
 i++;
-++(*count_str);
+(*count_str)++;
 }
 else if (str[i] != ' ' && str[i + 1] == ' ')
 {
 malc = 1;
 i++;
-++(*count_str);
+(*count_str)++;
 words[*count] = malloc(sizeof(**words) * (*count_str));
 if (words[*count] == NULL)
 {
