@@ -27,6 +27,16 @@ size_t print_listint_safe(const listint_t *head)
 		printf("[%p] %i\n", (void *)&(hold->next), hold->n);
 		hold = hold->next;
 	}
-	printf("[%p] %i\n", (void *)&(hold->next), hold->n);
+	if (hold > hold->next && hold == NULL)
+	{
+		printf("[%p] %i\n", (void *)&(hold->next), hold->n);
+		sum++;
+	}
+	else
+	{
+		sum++;
+		printf("[%p] %i\n", (void *)&(hold->next), hold->n);
+		return (98);
+	}
 	return (sum);
 }
