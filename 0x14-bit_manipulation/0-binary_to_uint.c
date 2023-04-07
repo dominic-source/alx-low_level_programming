@@ -24,7 +24,7 @@ unsigned int binary_to_uint(const char *b)
 
 /**
  * recursive_conv - convert binary to decimal
- * @b: pointet to the binary string
+ * @b: pointer to the binary string
  * @sum: result of the conversion
  * @i: index of each char
  * @p: power for the char
