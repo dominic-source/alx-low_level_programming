@@ -9,9 +9,12 @@
  */
 int get_bit(unsigned long int n, unsigned int index)
 {
-	int value = (n & (1u << (index))) > 0 ? 1 : 0;
+	int value = (n & (1u << (index)));
 
-	if (!(value ==  1 || value == 0))
+	int test = (n & ((~0x00) << (index)));
+
+	if (test == 0)
 		return (-1);
-	return (value);
+
+	return (value > 0 ? 1 : 0);
 }
