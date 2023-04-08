@@ -11,6 +11,5 @@ int get_bit(unsigned long int n, unsigned int index)
 {
 	int value = (n & (1u << (index)));
 
-	
 	return (value > 0 ? 1 : 0);
 }
