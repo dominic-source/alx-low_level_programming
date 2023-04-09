@@ -2,12 +2,12 @@
 
 /**
  * print_binary - print number in binary
- * @n: numbe
+ * @n: number
  */
 void print_binary(unsigned long int n)
 {
 	int i = 0;
-	int z = 1 << (sizeof(int) * 4);
+	unsigned int z = 1 << ((sizeof(unsigned int) * 4));
 	int s = 0;
 
 	if (n == 0)
