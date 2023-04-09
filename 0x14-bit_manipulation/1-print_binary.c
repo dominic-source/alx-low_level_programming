@@ -7,7 +7,7 @@
 void print_binary(unsigned long int n)
 {
 	int i = 0;
-	unsigned int z = 1 << ((sizeof(unsigned int) * 4));
+	unsigned long int z = 1lu << ((sizeof(unsigned long int) * 4));
 	int s = 0;
 
 	if (n == 0)
