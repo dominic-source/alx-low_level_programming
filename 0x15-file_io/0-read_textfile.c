@@ -1,4 +1,5 @@
 #include <fcntl.h>
+#include <sys/resource.h>
 #include <stddef.h>
 #include <stdlib.h>
 #include <unistd.h>
@@ -33,7 +34,7 @@ ssize_t read_textfile(const char *filename, size_t letters)
 		return (0);
 
 	cnt_2 = write(1, buffer, cnt);
-	if (cnt_2 == -1)
+	if (cnt_2 == -1 || cnt_2 == RLIMIT_FSIZE)
 		return (0);
 
 	free(buffer);
