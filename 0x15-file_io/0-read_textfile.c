@@ -1,9 +1,4 @@
-#include <fcntl.h>
-#include <sys/resource.h>
-#include <stddef.h>
-#include <stdlib.h>
-#include <unistd.h>
-#include <errno.h>
+#include "main.h"
 
 /**
  * read_textfile - read text file
