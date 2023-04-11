@@ -29,7 +29,7 @@ int main(int argc, char *argv[])
 		return (98);
 	}
 
-	fd_2 = open(argv[2], O_TRUNC | O_RDWR | O_CREAT, 00664);
+	fd_2 = open(argv[2], O_CREAT | O_TRUNC | O_RDWR, 00664);
 	if (fd_2 == -1 || fd_2 == EACCES)
 	{
 		_write_err(argv[2], error_3);
