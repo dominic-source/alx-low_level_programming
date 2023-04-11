@@ -33,7 +33,7 @@ int main(int argc, char *argv[])
 		return (99);
 	}
 	/* copy's the file to another file */
-	cnt = read(fd_1, buffer, BUFSIZ);
+	cnt = read(fd_1, buffer, M_BUFSIZ);
 	if (cnt == -1 || fd_1 == EBADF)
 		return (98);
 	cnt_2 = write(fd_2, buffer, cnt);
@@ -41,7 +41,7 @@ int main(int argc, char *argv[])
 		return (99);
 	while (cnt != 0)
 	{
-		cnt = read(fd_1, buffer, BUFSIZ);
+		cnt = read(fd_1, buffer, M_BUFSIZ);
 		write(fd_2, buffer, cnt);
 	}
 	/* close file descriptors */

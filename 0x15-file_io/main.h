@@ -1,6 +1,6 @@
 #ifndef MAIN_H
 #define MAIN_H
-#define BUFSIZ 1024
+#define M_BUFSIZ 1024
 #include <fcntl.h>
 #include <sys/stat.h>
 #include <sys/resource.h>
