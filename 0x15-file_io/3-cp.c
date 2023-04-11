@@ -18,28 +18,28 @@ int main(int argc, char *argv[])
 	if (argc != 3)
 	{
 		write(STDERR_FILENO, error, strlen(error));
-		exit(97);
+		return (97);
 	}
 	/* Opens the file and checks for error */
 	fd_1 = open(argv[1], O_RDWR);
 	if (fd_1 == -1 || fd_1 == ENOENT)
 	{
 		_write_err(argv[1], error_2);
-		exit(98);
+		return (98);
 	}
 	fd_2 = open(argv[2], O_CREAT | O_RDWR | O_TRUNC, 00664);
 	if (fd_2 == -1 || fd_2 == EACCES || fd_2 == EBADF)
 	{
 		_write_err(argv[2], error_3);
-		exit(99);
+		return (99);
 	}
 	/* copy's the file to another file */
 	cnt = read(fd_1, buffer, BUFSIZ);
 	if (cnt == -1 || fd_1 == EBADF)
-		exit(98);
+		return (98);
 	cnt_2 = write(fd_2, buffer, cnt);
 	if (cnt_2 == -1)
-		exit(99);
+		return (99);
 	while (cnt != 0)
 	{
 		cnt = read(fd_1, buffer, BUFSIZ);
@@ -66,14 +66,14 @@ int _close(ssize_t fd_1, ssize_t fd_2)
 	if (cl_2 == -1)
 	{
 		_write_err((char *)fd_2, error_4);
-		exit(100);
+		return (100);
 	}
 
 	cl_1 = close(fd_1);
 	if (cl_1 == -1)
 	{
 		_write_err((char *)fd_1, error_4);
-		exit(100);
+		return (100);
 	}
 
 
