@@ -11,43 +11,43 @@ int main(int argc, char *argv[])
 	char *error = "Usage: cp file_from file_to\n";
 	char *error_2 = "Error: Can't read from file ";
 	char *error_3 = "Error: Can't write to file ";
-	ssize_t fd_1, fd_2, cnt, cnt_2;
+	int fd_1, fd_2, fd_3, cnt, cnt_2;
 	char buffer[M_BUFSIZ];
 
 	if (argc != 3)
 	{
 		write(STDERR_FILENO, error, strlen(error));
-		return (97);
+		exit(97);
 	}
-	/* Opens the file and checks for error */
 	fd_1 = open(argv[1], O_RDWR);
-	if (fd_1 == -1 || fd_1 == ENOENT)
+	if (fd_1 == -1 || fd_1 == ENOENT || fd_1 == EACCES)
 	{
 		_write_err(argv[1], error_2);
-		return (98);
+		exit(98);
 	}
-	fd_2 = open(argv[2], O_CREAT | O_RDWR | O_TRUNC, 0664);
-	if (fd_2 == -1 || fd_2 == EACCES || fd_2 == EBADF)
+	fd_3 = open(argv[2], O_TRUNC | O_RDWR);
+	close(fd_3);
+	fd_2 = open(argv[2], O_CREAT | O_RDWR, 0664);
+	if (fd_2 == -1 || fd_2 == EACCES || fd_2 == EBADF || fd_2 == EDQUOT)
 	{
 		_write_err(argv[2], error_3);
-		return (99);
+		exit(99);
 	}
 	/* copy's the file to another file */
 	cnt = read(fd_1, buffer, M_BUFSIZ);
 	if (cnt == -1 || fd_1 == EBADF)
-		return (98);
+		exit(98);
 	cnt_2 = write(fd_2, buffer, cnt);
 	if (cnt_2 == -1)
-		return (99);
+		exit(99);
 	while (cnt != 0)
 	{
 		cnt = read(fd_1, buffer, M_BUFSIZ);
 		write(fd_2, buffer, cnt);
 	}
-	/* close file descriptors */
 	_close(fd_1, fd_2);
 	chmod(argv[2], 0664);
-	return (1);
+	return (0);
 }
 
 
@@ -66,14 +66,14 @@ int _close(ssize_t fd_1, ssize_t fd_2)
 	if (cl_1 == -1)
 	{
 		_write_err((char *)fd_1, error_4);
-		return (100);
+		exit(100);
 	}
 
 	cl_2 = close(fd_2);
 	if (cl_2 == -1)
 	{
 		_write_err((char *)fd_2, error_4);
-		return (100);
+		exit(100);
 	}
 
 
