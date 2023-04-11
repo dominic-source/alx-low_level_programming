@@ -62,6 +62,13 @@ int _close(ssize_t fd_1, ssize_t fd_2)
 	char *error_4 = "Error: Can't close fd ";
 	int cl_1, cl_2;
 
+	cl_1 = close(fd_1);
+	if (cl_1 == -1)
+	{
+		_write_err((char *)fd_1, error_4);
+		return (100);
+	}
+
 	cl_2 = close(fd_2);
 	if (cl_2 == -1)
 	{
@@ -69,12 +76,6 @@ int _close(ssize_t fd_1, ssize_t fd_2)
 		return (100);
 	}
 
-	cl_1 = close(fd_1);
-	if (cl_1 == -1)
-	{
-		_write_err((char *)fd_1, error_4);
-		return (100);
-	}
 
 
 	return (0);
