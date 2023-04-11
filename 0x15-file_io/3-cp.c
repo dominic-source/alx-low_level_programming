@@ -10,10 +10,10 @@ int main(int argc, char *argv[])
 {
 	char *error = "Usage: cp file_from file_to\n";
 	char *error_2 = "Error: Can't read from file ";
-	char *error_3 = "Error: Can't write to file ", *buffer;
+	char *error_3 = "Error: Can't write to file ";
 	ssize_t fd_1, fd_2, cnt, cnt_2;
+	char buffer[M_BUFSIZ];
 
-	buffer = malloc(BUFSIZ);
 	if (argc != 3)
 	{
 		write(STDERR_FILENO, error, strlen(error));
