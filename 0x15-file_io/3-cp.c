@@ -10,8 +10,7 @@ int main(int argc, char *argv[])
 {
 	char *error = "Usage: cp file_from file_to\n";
 	char *error_2 = "Error: Can't read from file ";
-	char *error_3 = "Error: Can't write to file ";
-	char *buffer;
+	char *error_3 = "Error: Can't write to file ", *buffer;
 	ssize_t fd_1, fd_2, cnt, cnt_2;
 
 	buffer = malloc(BUFSIZ);
@@ -27,7 +26,7 @@ int main(int argc, char *argv[])
 		_write_err(argv[1], error_2);
 		return (98);
 	}
-	fd_2 = open(argv[2], O_CREAT | O_RDWR | O_TRUNC, 00664);
+	fd_2 = open(argv[2], O_CREAT | O_RDWR | O_TRUNC, 0664);
 	if (fd_2 == -1 || fd_2 == EACCES || fd_2 == EBADF)
 	{
 		_write_err(argv[2], error_3);
@@ -47,6 +46,7 @@ int main(int argc, char *argv[])
 	}
 	/* close file descriptors */
 	_close(fd_1, fd_2);
+	chmod(argv[2], 0664);
 	return (1);
 }
 

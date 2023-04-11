@@ -2,6 +2,7 @@
 #define MAIN_H
 #define BUFSIZ 1024
 #include <fcntl.h>
+#include <sys/stat.h>
 #include <sys/resource.h>
 #include <stddef.h>
 #include <stdlib.h>
