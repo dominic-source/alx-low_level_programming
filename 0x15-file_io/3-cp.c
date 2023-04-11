@@ -78,7 +78,7 @@ int _close(ssize_t fd_1, ssize_t fd_2)
 
 
 
-	return (0);
+	return (cl_2);
 }
 
 
