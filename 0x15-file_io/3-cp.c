@@ -11,7 +11,7 @@ int main(int argc, char *argv[])
 	char *error = "Usage: cp file_from file_to\n";
 	char *error_2 = "Error: Can't read from file ";
 	char *error_3 = "Error: Can't write to file ";
-	int fd_1, fd_2, fd_3, cnt, cnt_2;
+	int fd_1, fd_2, fd_3, cnt;
 	char buffer[M_BUFSIZ];
 
 	if (argc != 3)
@@ -34,19 +34,12 @@ int main(int argc, char *argv[])
 		exit(99);
 	}
 	/* copy's the file to another file */
-	cnt = read(fd_1, buffer, M_BUFSIZ);
-	if (cnt == -1 || fd_1 == EBADF)
-		exit(98);
-	cnt_2 = write(fd_2, buffer, cnt);
-	if (cnt_2 == -1)
-		exit(99);
-	while (cnt != 0)
-	{
-		cnt = read(fd_1, buffer, M_BUFSIZ);
-		write(fd_2, buffer, cnt);
-	}
+
+	while ((cnt = read(fd_1, buffer, M_BUFSIZ)) != 0)
+		write(fd_2, buffer, M_BUFSIZ);
+
 	_close(fd_1, fd_2);
-	chmod(argv[2], 0664);
+
 	return (0);
 }
 
