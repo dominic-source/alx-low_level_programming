@@ -17,7 +17,7 @@ int main(int argc, char *argv[])
 	if (argc != 2)
 	{
 		perror("Usage: elf_header elf_filename");
-		return (-1);
+		exit(98);
 	}
 	fd = open(argv[1], O_RDONLY);
 	if (fd < 0)
@@ -27,7 +27,7 @@ int main(int argc, char *argv[])
 	}
 	cnt = fstat(fd, &statbuf);
 	if (cnt < 0)
-		exit(cnt);
+		exit(98);
 	addr = mmap(NULL, statbuf.st_size, PROT_READ, MAP_PRIVATE, fd, len);
 
 	elf_hdr = (Elf64_Ehdr *)addr;
