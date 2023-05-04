@@ -6,7 +6,7 @@
  */
 void print_binary(unsigned long int n)
 {
-	int i, start = 0, size = sizeof(unsigned long int) + 2;
+	unsigned int i, start = 0, size = sizeof(unsigned long int) + 2;
 	unsigned long int j;
 
 	if (n == 0)
@@ -15,9 +15,9 @@ void print_binary(unsigned long int n)
 		return;
 	}
 
-	for (i = size; i >= 0; i--)
+	for (i = size + 1; i != 0; --i)
 	{
-		j = n & (1lu << i);
+		j = n & (1lu << (i - 1));
 		if (j > 0)
 		{
 			_putchar('1');
