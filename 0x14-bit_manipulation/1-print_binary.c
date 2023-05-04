@@ -17,7 +17,7 @@ void print_binary(unsigned long int n)
 
 	for (i = size; i >= 0; i--)
 	{
-		j = n & (0x01 << i);
+		j = n & (1lu << i);
 		if (j > 0)
 		{
 			_putchar('1');
