@@ -18,13 +18,12 @@ unsigned int i = 0, j = 0;
 unsigned int size, len_s1;
 
 if (s2 == NULL || *s2 == '\0')
-n = 0;
-else if (n >= strlen(s2))
+s2 = "";
+if (n >= strlen(s2))
 n = strlen(s2);
 
 if (s1 == NULL || *s1 == '\0')
-len_s1 = 0;
-else
+s1 = "";
 len_s1 = strlen(s1);
 
 size = len_s1 + n + 1;
@@ -46,7 +45,6 @@ str[i] = s2[j];
 i++;
 }
 }
-if ((s1 != NULL && s2 != NULL) || s1 != NULL || s2 != NULL)
 str[i] = '\0';
 
 return (str);
