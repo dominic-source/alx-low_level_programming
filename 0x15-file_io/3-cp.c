@@ -71,7 +71,7 @@ int close_all(int fd, int fd2, int fd3)
 		l = close(fd3);
 		if (l == -1)
 		{
-			dprintf(er, "Error: Can't close fd %d", fd3);
+			dprintf(er, "Error: Can't close fd %i", fd3);
 			return (-1);
 		}
 	}
@@ -79,14 +79,14 @@ int close_all(int fd, int fd2, int fd3)
 	k = close(fd2);
 	if (k == -1)
 	{
-		dprintf(er, "Error: Can't close fd %d", fd2);
+		dprintf(er, "Error: Can't close fd %i", fd2);
 		return (-1);
 	}
 
 	j = close(fd);
 	if (j == -1)
 	{
-		dprintf(er, "Error: Can't close fd %d", fd);
+		dprintf(er, "Error: Can't close fd %i", fd);
 		return (-1);
 	}
 
