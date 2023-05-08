@@ -24,14 +24,14 @@ int main(int ac, char *av[])
 		dprintf(er, "Usage: cp file_from file_to\n");
 		exit(97);
 	}
-	fd2 = open(av1, O_RDONLY, 0);
+	fd2 = open(av1, O_RDONLY);
 	if (fd2 == -1)
 	{
 		dprintf(er, "Error: Can't read from file %s\n", av1);
 		exit(98);
 	}
-	fd3 = open(av2, O_RDONLY, 0);
-	fd = open(av2, O_WRONLY | O_CREAT | O_TRUNC, 0);
+	fd3 = open(av2, O_RDONLY);
+	fd = open(av2, O_WRONLY | O_CREAT | O_TRUNC, 0664);
 	if (fd == -1)
 		NOWRITE;
 	count = read(fd2, buffer, buf);
