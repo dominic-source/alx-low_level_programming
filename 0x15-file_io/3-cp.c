@@ -31,7 +31,7 @@ int main(int ac, char *av[])
 		exit(98);
 	}
 	fd3 = open(av2, O_RDONLY);
-	fd = open(av2, O_WRONLY | O_CREAT | O_TRUNC, 0664);
+	fd = open(av2, O_CREAT | O_WRONLY | O_TRUNC, 0664);
 	if (fd == -1)
 		NOWRITE;
 	count = read(fd2, buffer, buf);
