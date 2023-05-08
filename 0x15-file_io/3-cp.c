@@ -16,7 +16,7 @@ int main(int ac, char *av[])
 {
 	char *av1 = av[1], *av2 = av[2];
 	char buffer[1024];
-	int fd, fd2, fd3, buf = 1024, er = STDERR_FILENO;
+	int fd, fd2, fd3, er = STDERR_FILENO;
 	ssize_t count, wr;
 
 	if (ac != 3)
@@ -34,7 +34,7 @@ int main(int ac, char *av[])
 	fd = open(av2, O_CREAT | O_RDWR | O_TRUNC, 0664);
 	if (fd == -1)
 		NOWRITE;
-	count = read(fd2, buffer, buf);
+	count = read(fd2, buffer, sizeof(buffer));
 	if (count == -1)
 	{
 		dprintf(er, "Error: Can't read from file %s\n", av1);
@@ -45,12 +45,12 @@ int main(int ac, char *av[])
 		wr = write(fd, buffer, count);
 		if (wr == -1)
 			NOWRITE;
-		count = read(fd2, buffer, buf);
+		count = read(fd2, buffer, sizeof(buffer));
 	}
-	if (close_all(fd, fd2, fd3) == -1)
-		exit(100);
 	if (fd3 == -1)
 		chmod(av2, 0664);
+	if (close_all(fd, fd2, fd3) == -1)
+		exit(100);
 	return (0);
 }
 
