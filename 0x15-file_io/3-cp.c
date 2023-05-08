@@ -35,18 +35,19 @@ int main(int ac, char *av[])
 	if (fd == -1)
 		NOWRITE;
 	count = read(fd2, buffer, sizeof(buffer));
-	if (count == -1)
-	{
-		dprintf(er, "Error: Can't read from file %s\n", av1);
-		exit(98);
-	}
-	while (count != 0)
+	while (count != 0 && count != -1)
 	{
 		wr = write(fd, buffer, count);
 		if (wr == -1)
 			NOWRITE;
 		count = read(fd2, buffer, sizeof(buffer));
 	}
+	if (count == -1)
+	{
+		dprintf(er, "Error: Can't read from file %s\n", av1);
+		exit(98);
+	}
+
 	if (fd3 == -1)
 		chmod(av2, 0664);
 	if (close_all(fd, fd2, fd3) == -1)
