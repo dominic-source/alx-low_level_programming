@@ -30,7 +30,7 @@ int main(int ac, char *av[])
 		dprintf(er, "Error: Can't read from file %s\n", av1);
 		exit(98);
 	}
-	fd3 = open(av2, O_RDONLY);
+	fd3 = open(av2, O_RDWR);
 	fd = open(av2, O_CREAT | O_RDWR | O_TRUNC, 0664);
 	if (fd == -1)
 		NOWRITE;
@@ -40,7 +40,7 @@ int main(int ac, char *av[])
 		dprintf(er, "Error: Can't read from file %s\n", av1);
 		exit(98);
 	}
-	while (count != -1 && count != 0)
+	while (count != 0)
 	{
 		wr = write(fd, buffer, count);
 		if (wr == -1)
