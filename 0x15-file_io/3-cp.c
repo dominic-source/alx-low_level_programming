@@ -30,8 +30,8 @@ int main(int ac, char *av[])
 		dprintf(er, "Error: Can't read from file %s\n", av1);
 		exit(98);
 	}
-	fd3 = open(av2, O_RDONLY);
-	fd = open(av2, O_CREAT | O_RDWR | O_TRUNC, 0664);
+	fd3 = open(av2, O_WRONLY);
+	fd = open(av2, O_CREAT | O_WRONLY | O_TRUNC, 0664);
 	if (fd == -1)
 		NOWRITE;
 	count = read(fd2, buffer, sizeof(buffer));
