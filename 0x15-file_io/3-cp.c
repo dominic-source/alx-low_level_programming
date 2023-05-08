@@ -24,7 +24,7 @@ int main(int ac, char *av[])
 		dprintf(er, "Usage: cp file_from file_to\n");
 		exit(97);
 	}
-	fd2 = open(av1, O_RDONLY);
+	fd2 = open(av1, O_RDWR);
 	if (fd2 == -1)
 	{
 		dprintf(er, "Error: Can't read from file %s\n", av1);
