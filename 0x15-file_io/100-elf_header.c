@@ -91,7 +91,7 @@ void magic(Elf32_Ehdr *ehd)
 	}
 	printf("  %-35s", "Version:");
 	printf("%c", ehd->e_ident[EI_VERSION] != EV_NONE ?
-	       ehd->e_version + '0' : '\0');
+	       ehd->e_version[EV_CURRENT] + '0' : '\0');
 	printf("%s\n", ehd->e_ident[EI_VERSION] != EV_NONE ?
 	       " (current)" : "unknown");
 }
