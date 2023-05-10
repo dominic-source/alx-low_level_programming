@@ -104,7 +104,7 @@ void abi_version(Elf32_Ehdr *ehd)
 	printf("  %-35s", "OS/ABI:");
 	switch (ehd->e_ident[EI_OSABI])
 	{
-	case ELFOSABI_SYSV:
+	case ELFOSABI_SYSV || ELFOSABI_NONE:
 		printf("UNIX - System V");
 		break;
 	case ELFOSABI_HPUX:
