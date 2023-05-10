@@ -77,7 +77,6 @@ void magic(Elf32_Ehdr *ehd)
 		printf("ELF64\n");
 		break;
 	}
-
 	printf("  %-35s", "Data:");
 	switch (ehd->e_ident[EI_DATA])
 	{
@@ -92,8 +91,9 @@ void magic(Elf32_Ehdr *ehd)
 		break;
 	}
 	printf("  %-35s", "Version:");
+	printf("%d ", ehd->e_ident[EI_VERSION] == EV_CURRENT && EV_CURRENT);
 	printf("%s\n", ehd->e_ident[EI_VERSION] == EV_CURRENT ?
-	       "1 (current)" : "Unknown");
+	       "(current)": "Unknown");
 }
 
 /**
