@@ -83,10 +83,10 @@ void magic(Elf32_Ehdr *ehd)
 		printf("Unknown data format\n");
 		break;
 	case ELFDATA2LSB:
-		printf("2's complement, little-endian\n");
+		printf("2's complement, little endian\n");
 		break;
 	case ELFDATA2MSB:
-		printf("2's complement, big-endian\n");
+		printf("2's complement, big endian\n");
 		break;
 	}
 	printf("  %-35s", "Version:");
