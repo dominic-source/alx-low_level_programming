@@ -9,12 +9,13 @@
 int main(int ac, char *av[])
 {
 	Elf32_Ehdr *ehd;
-	int fd;
-	off_t ls;
 	char buffer[3000];
-	char *errma = "Could not open/seek file\n", *errma4 = "Not an Elf file\n";
+	char *errma = "Could not open/seek file\n";
+	char *errma4 = "Error: Not an ELF file - wrong magic bytes at the start\n";
 	char *errma2 = "Usage: elf_header elf_filename\n";
 	ssize_t count;
+	int fd;
+	off_t ls;
 
 	if (ac != 2)
 	{
@@ -29,12 +30,10 @@ int main(int ac, char *av[])
 		exit(98);
 	}
 	count = read(fd, buffer, 1024);
-	if (count == -1)
-		return (-1);
 	ehd = (Elf32_Ehdr *)buffer;
-	if (ehd->e_ident[EI_MAG1] == 'E' && ehd->e_ident[EI_MAG2] == 'L')
+	if (ehd->e_ident[EI_MAG1] == 'E' && count != -1)
 	{
-		if (ehd->e_ident[EI_MAG3] == 'F')
+		if (ehd->e_ident[EI_MAG2] == 'L' && ehd->e_ident[EI_MAG3] == 'F')
 		{
 			magic(ehd);
 			abi_version(ehd);
@@ -59,9 +58,9 @@ void magic(Elf32_Ehdr *ehd)
 	int i;
 
 	printf("ELF Header:\n");
-	printf("  Magic:   ");
+	printf("  Magic:  ");
 	for (i = 0; i < EI_NIDENT; i++)
-		printf("%.2x ", ehd->e_ident[i]);
+		printf(" %.2x", ehd->e_ident[i]);
 	printf("\n");
 	printf("  %-35s", "Class:");
 
@@ -93,7 +92,7 @@ void magic(Elf32_Ehdr *ehd)
 	printf("  %-35s", "Version:");
 	printf("%d ", ehd->e_ident[EI_VERSION] == EV_CURRENT && EV_CURRENT);
 	printf("%s\n", ehd->e_ident[EI_VERSION] == EV_CURRENT ?
-	       "(current)": "Unknown");
+	       "(current)" : "Unknown");
 }
 
 /**
