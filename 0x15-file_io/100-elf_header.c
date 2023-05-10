@@ -171,5 +171,41 @@ void type_entry(Elf32_Ehdr *ehd)
 	}
 	printf("\n");
 	printf("  %-35s", "Entry point address:");
-	printf("0x%x\n", ehd->e_entry);
+	printf("0x%lx\n", ehd->e_ident[EI_DATA] == ELFDATA2LSB ?
+	       ehd->e_entry : (ehd->e_ident[EI_CLASS] == 1 ?
+			       e_entry1(ehd->e_entry) : e_entry2(ehd->e_entry)));
+}
+
+/**
+ * e_entry1 - convert little endian to big endian or otherwise
+ * @entry1: address
+ * Return: address
+ */
+uint32_t e_entry1(uint32_t entry1)
+{
+	entry1 = ((entry1 & 0xff000000) >> 24 |
+		  (entry1 & 0x00ff0000) >> 8 |
+		  (entry1 & 0x0000ff00) << 8 |
+		  (entry1 & 0x000000ff) << 24);
+	return (entry1);
+
+}
+
+/**
+ * e_entry2 - convert little endian to big endian or otherwise
+ * @entry2: address
+ * Return: address
+ */
+uint64_t e_entry2(uint64_t entry2)
+{
+	entry2 = ((entry2 & 0xff00000000000000) >> 56 |
+		  (entry2 & 0x00ff000000000000) >> 40 |
+		  (entry2 & 0x0000ff0000000000) >> 24 |
+		  (entry2 & 0x000000ff00000000) >> 8 |
+		  (entry2 & 0x00000000ff000000) << 8 |
+		  (entry2 & 0x0000000000ff0000) << 24 |
+		  (entry2 & 0x000000000000ff00) << 40 |
+		  (entry2 & 0x00000000000000ff) << 56);
+	return (entry2);
+
 }
