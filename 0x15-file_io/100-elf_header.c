@@ -90,7 +90,7 @@ void magic(Elf32_Ehdr *ehd)
 		break;
 	}
 	printf("  %-35s", "Version:");
-	printf("%d ", ehd->e_ident[EI_VERSION] == EV_CURRENT && EV_CURRENT);
+	printf("%d ", ehd->e_version == EV_CURRENT && EV_CURRENT);
 	printf("%s\n", ehd->e_ident[EI_VERSION] == EV_CURRENT ?
 	       "(current)" : "Unknown");
 }
