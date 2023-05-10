@@ -166,6 +166,8 @@ void type_entry(Elf32_Ehdr *ehd)
 	case ET_CORE:
 		printf("CORE (Core file)");
 		break;
+	default:
+		printf("EXEC (Executable file)");
 	}
 	printf("\n");
 	printf("  %-35s", "Entry point address:");
