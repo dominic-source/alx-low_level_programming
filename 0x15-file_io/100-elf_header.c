@@ -130,7 +130,7 @@ void abi_version(Elf32_Ehdr *ehd)
 		printf("UNIX - TRU64");
 		break;
 	case ELFOSABI_ARM:
-		printf("ARM architecture");
+		printf("UNIX - System V");
 		break;
 	case ELFOSABI_STANDALONE:
 		printf("UNIX - System V");
