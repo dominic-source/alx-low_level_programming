@@ -133,7 +133,7 @@ void abi_version(Elf32_Ehdr *ehd)
 		printf("ARM architecture");
 		break;
 	case ELFOSABI_STANDALONE:
-		printf("Stand-alone (embedded)");
+		printf("<unknown: 53>");
 		break;
 	}
 	printf("\n");
