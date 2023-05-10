@@ -133,8 +133,10 @@ void abi_version(Elf32_Ehdr *ehd)
 		printf("ARM architecture");
 		break;
 	case ELFOSABI_STANDALONE:
-		printf("<unknown: 53>");
+		printf("UNIX - System V");
 		break;
+	default:
+		printf("<unknown: 53>");
 	}
 	printf("\n");
 	printf("  %-35s", "ABI Version:");
