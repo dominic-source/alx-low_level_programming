@@ -16,6 +16,8 @@ def multiple():
             result = i * j
             if detect(result) is not None:
                 number = detect(result)
+                hold = i, j
     print(number)
+    print(hold)
 if __name__ == '__main__':
     multiple()
