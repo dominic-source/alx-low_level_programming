@@ -38,7 +38,7 @@ int hash_table_set(hash_table_t *ht, const char *key, const char *value)
 		ht->array[index] = item;
 	else if (ht->array[index] != NULL)
 		update(&(ht->array[index]), &item, key);
-	
+
 	return (1);
 }
 
@@ -70,7 +70,7 @@ void update(hash_node_t **ht, hash_node_t **item, const char *key)
 		}
 	}
 	else
-	{	
+	{
 		while (current != NULL)
 		{
 			if (strcmp(current->key, key) == 0)
