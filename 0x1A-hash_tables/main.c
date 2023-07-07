@@ -56,7 +56,6 @@ int main(void)
 		{
 			if (ht->array[i]->next == NULL)
 			{
-				free(ht->array[i]->key);
 				free(ht->array[i]->value);
 				free(ht->array[i]);
 			}
@@ -65,7 +64,6 @@ int main(void)
 				current = ht->array[i]; 
 				while (current != NULL)
 				{
-					free(current->key);
 					free(current->value);
 					hold = current;
 					current = current->next;
