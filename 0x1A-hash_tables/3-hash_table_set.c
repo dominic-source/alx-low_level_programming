@@ -13,6 +13,8 @@ int hash_table_set(hash_table_t *ht, const char *key, const char *value)
 	hash_node_t *item;
 	unsigned long int index;
 
+	if (ht == NULL || key == NULL || strcmp(key, "") == 0)
+		return (0);
 	item = malloc(sizeof(hash_node_t));
 	item->key = malloc(sizeof(char) * (strlen(key) + 1));
 	if (item->key == NULL)
