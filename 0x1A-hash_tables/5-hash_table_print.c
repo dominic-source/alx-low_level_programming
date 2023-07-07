@@ -27,6 +27,7 @@ void hash_table_print(const hash_table_t *ht)
 			}
 			else
 			{
+				flag2 = 0;
 				while (cnt != NULL)
 				{
 					if (flag2)
