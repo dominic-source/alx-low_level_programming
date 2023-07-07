@@ -13,7 +13,7 @@ int hash_table_set(hash_table_t *ht, const char *key, const char *value)
 	hash_node_t *item;
 	unsigned long int index;
 
-	if (ht == NULL || key == NULL || strcmp(key, "") == 0)
+	if (ht == NULL || key == NULL || strcmp(key, "") == 0 || value == NULL)
 		return (0);
 	item = malloc(sizeof(hash_node_t));
 	if (item == NULL)
@@ -36,9 +36,7 @@ int hash_table_set(hash_table_t *ht, const char *key, const char *value)
 	item->next = NULL;
 	index = key_index((const unsigned char *)key, ht->size);
 	if (ht->array[index] == NULL)
-	{
 		ht->array[index] = item;
-	}
 	else
 	{
 		/* Add node at the top of the node list*/
