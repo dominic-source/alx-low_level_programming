@@ -15,9 +15,14 @@ hash_table_t *hash_table_create(unsigned long int size)
 	if (my_table == NULL)
 		return (NULL);
 	my_table->size = size;
-	my_table->array = (hash_node_t **)calloc(my_table->size, sizeof(hash_node_t));
+	my_table->array = (hash_node_t **)calloc(my_table->size, sizeof(hash_node_t *));
 
 	if (my_table->array == NULL)
+	{
+		free(my_table);
+		return (NULL);
+	}
+	else if (size == 0)
 	{
 		free(my_table);
 		return (NULL);
