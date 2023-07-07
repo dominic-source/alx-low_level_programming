@@ -18,13 +18,12 @@ int hash_table_set(hash_table_t *ht, const char *key, const char *value)
 	item = malloc(sizeof(hash_node_t));
 	if (item == NULL)
 		return (0);
-	item->key = malloc(sizeof(char) * (strlen(key) + 1));
+	item->key = strdup(key);
 	if (item->key == NULL)
 	{
 		free(item);
 		return (0);
 	}
-
 	item->value = strdup(value);
 	if (item->value == NULL)
 	{
@@ -37,13 +36,59 @@ int hash_table_set(hash_table_t *ht, const char *key, const char *value)
 	index = key_index((const unsigned char *)key, ht->size);
 	if (ht->array[index] == NULL)
 		ht->array[index] = item;
-	else
-	{
-		/* Add node at the top of the node list*/
-		item->next = ht->array[index];
-		ht->array[index] = item;
-	}
-
+	else if (ht->array[index] != NULL)
+		update(&(ht->array[index]), &item, key);
+	
 	return (1);
+}
+
+/**
+ * update - A function to set or update linked list in the hash table
+ * @ht: a pointer to the hash table
+ * @item: a pointer to the preallocated item
+ * @key: the key to the value
+ */
+void update(hash_node_t **ht, hash_node_t **item, const char *key)
+{
+	hash_node_t *current = *ht;
+	int flag = 1;
+
+	if (current->next == NULL)
+	{
+		if (strcmp(current->key, key) == 0)
+		{
+			/* set if value of key if key already exist */
+			free((*item)->key);
+			free(current->value);
+			current->value = (*item)->value;
+			free(*item);
+		}
+		else
+		{
+			(*item)->next = *ht;
+			*ht = *item;
+		}
+	}
+	else
+	{	
+		while (current != NULL)
+		{
+			if (strcmp(current->key, key) == 0)
+			{
+				free((*item)->key);
+				free(current->value);
+				current->value = (*item)->value;
+				flag = 0;
+				free(*item);
+			}
+			current = current->next;
+		}
+
+		if (flag)
+		{
+			(*item)->next = *ht;
+			*ht = *item;
+		}
+	}
 }
 

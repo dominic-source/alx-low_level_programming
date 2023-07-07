@@ -24,7 +24,6 @@ int main(void)
 	hash_table_set(ht, "dram", "They like a lot of dramas");
 	hash_table_set(ht, "subgenera", "They are like submarines");
 	hash_table_set(ht, "vivency", "There is a valenc somewhere");
-	hash_table_set(NULL, "", "There is a boy here");
 	printf("------------Starting the hash table----------\n\n");
 	while (i < ht->size)
 	{
