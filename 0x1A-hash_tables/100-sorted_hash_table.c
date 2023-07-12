@@ -66,6 +66,7 @@ int shash_table_set(shash_table_t *ht, const char *key, const char *value)
 				free(item->key);
 				free(current->value);
 				current->value = item->value;
+				free(item);
 				flag = 0;
 				break;
 			}
