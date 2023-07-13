@@ -73,7 +73,6 @@ int shash_table_set(shash_table_t *ht, const char *key, const char *value)
 		}
 		if (flag)
 		{
-			ht->array[index] = item;
 			item->next = ht->array[index];
 			ht->array[index] = item;
 			handle_linkedlist(&ht, &item);
@@ -166,31 +165,6 @@ void shash_table_print(const shash_table_t *ht)
 	printf("}\n");
 }
 
-#define LINK\
-	do {\
-		if (current->sprev == NULL)\
-		{\
-			(*item)->snext = current->snext;\
-			(*item)->sprev = current;\
-			current->snext = (*item);\
-		} \
-		else if (current->snext == NULL)\
-		{\
-			(*item)->snext = NULL;\
-			(*item)->sprev = current;\
-			current->snext = (*item);\
-			(*ht)->stail = (*item);\
-		} \
-		else\
-		{\
-			(*item)->snext = current->snext;\
-			(*item)->sprev = current;\
-			current->snext->sprev = (*item);\
-			current->snext = (*item);\
-		} \
-} \
-while (0)\
-
 /**
  * handle_linkedlist - handles the linked list to print out a sorted list
  * @ht: this is the hash table
@@ -198,43 +172,38 @@ while (0)\
  */
 void handle_linkedlist(shash_table_t **ht, shash_node_t **item)
 {
-	shash_node_t *current;
+	shash_node_t *current, *prev;
 
-	if ((*ht)->shead == NULL || (*ht)->stail == NULL)
+	if ((*ht)->shead == NULL || strcmp((*item)->key, (*ht)->shead->key) < 0)
 	{
-		(*item)->snext = NULL;
+		(*item)->snext = (*ht)->shead;
 		(*item)->sprev = NULL;
+		if ((*ht)->shead != NULL)
+			(*ht)->shead->sprev = (*item);
 		(*ht)->shead = (*item);
-		(*ht)->stail = (*item);
+		if ((*ht)->stail == NULL)
+			(*ht)->stail = (*item);
 	}
 	else
 	{
-		current = (*ht)->stail;
-		while (current != NULL)
+		current = (*ht)->shead;
+		prev = NULL;
+
+		while (current != NULL && strcmp((*item)->key, current->key) > 0)
 		{
-			if (strcmp(current->key, (*item)->key) < 0)
-			{
-				LINK;
-				break;
-			}
-			else if (strcmp(current->key, (*item)->key) > 0)
-			{
-				if (current->sprev == NULL)
-				{
-					(*item)->snext = current;
-					(*item)->sprev = NULL;
-					current->sprev = (*item);
-					(*ht)->shead = (*item);
-					break;
-				}
-			}
-			current = current->sprev;
+			prev = current;
+			current = current->snext;
 		}
+
+		(*item)->snext = current;
+		(*item)->sprev = prev;
+		if (current != NULL)
+			current->sprev = (*item);
+		else
+			(*ht)->stail = (*item);
+		prev->snext = (*item);
 	}
 }
-
-
-
 
 
 /**
