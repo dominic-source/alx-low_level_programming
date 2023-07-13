@@ -49,7 +49,6 @@ int shash_table_set(shash_table_t *ht, const char *key, const char *value)
 	if (allocate_item_mem(&item, key, value) == 0)
 		return (0);
 	index = key_index((unsigned const char *)key, ht->size);
-
 	if (ht->array[index] == NULL)
 	{
 		ht->array[index] = item;
@@ -80,7 +79,6 @@ int shash_table_set(shash_table_t *ht, const char *key, const char *value)
 			handle_linkedlist(&ht, &item);
 		}
 	}
-
 	return (1);
 }
 
