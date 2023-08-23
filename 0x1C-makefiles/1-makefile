@@ -1,0 +1,7 @@
+# a make to automate recompiling of file
+
+CC = gcc
+SRC = main.c school.c
+
+school: $(SRC)
+	$(CC) $(SRC) m.h -o school

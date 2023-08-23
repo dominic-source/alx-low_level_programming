@@ -1,0 +1,29 @@
+# This will recompile our c files
+
+# This the compile to be used
+CC = gcc
+
+
+# The source files
+SRC = main.c school.c
+
+# The object files
+OBJ = $(SRC:.c=.o)
+
+# Name of the executable
+NAME = school
+
+# The rules to build executable
+all: $(NAME)
+
+$(NAME): $(OBJ)
+	$(CC) $(OBJ) -o $@
+
+main.o: main.c
+	$(CC) -c main.c
+
+school.o: school.o
+	$(CC) -c school.c
+
+clean:
+	rm *.o
