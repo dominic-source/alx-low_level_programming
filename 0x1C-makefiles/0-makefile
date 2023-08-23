@@ -3,5 +3,5 @@
 all: school
 
 # Build the executable
-school: *.c
-	gcc *.c -o school
+school: main.c school.c m.h
+	gcc main.c school.c  -o school
