@@ -19,11 +19,5 @@ all: $(NAME)
 $(NAME): $(OBJ)
 	$(CC) $(OBJ) -o $@
 
-main.o: main.c
-	$(CC) -c main.c
-
-school.o: school.o
-	$(CC) -c school.c
-
 clean:
 	rm *.o
