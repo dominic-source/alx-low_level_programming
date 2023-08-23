@@ -1,0 +1,10 @@
+# A makefile to create an executable for school
+
+CC = gcc
+EXEC = school
+
+all:$(EXEC)
+
+# Build the executable
+$(EXEC): *.c
+	$(CC) *.c -o $(EXEC)
