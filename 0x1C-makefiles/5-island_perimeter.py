@@ -53,7 +53,6 @@ def island_perimeter(grid):
         for jdx, j in enumerate(i):
             if j == unit:
                 value = checkGrid(grid, idx, jdx, unit)
-                print(value)
                 if value == unit*4:
                     return value
                 else:

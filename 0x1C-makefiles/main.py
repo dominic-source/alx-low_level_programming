@@ -16,6 +16,15 @@ if __name__ == "__main__":
         [1, 1, 1, 1, 1],
         [1, 1, 1, 1, 1],
         [1, 1, 1, 1, 1]]
+    grid3 = [
+        [0, 0, 0, 0, 0, 0],
+        [0, 1, 0, 0, 0, 0],
+        [0, 1, 0, 0, 0, 0],
+        [0, 1, 1, 1, 0, 0],
+        [0, 0, 0, 0, 0, 0]
+    ]
     print(island_perimeter(grid))
     print('-------next test ------')
     print(island_perimeter(grid2))
+    print('----next test ----')
+    print(island_perimeter(grid3))
