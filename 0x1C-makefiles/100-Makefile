@@ -9,6 +9,9 @@ OBJ = $(SRC:.c=.o)
 # The name of the executable
 NAME = school
 
+# The compiler to be used
+CC = gcc
+
 # GCC flags
 CFLAGS = -Wall -Werror -Wextra -pedantic
 
