@@ -2,21 +2,6 @@
 #include <math.h>
 
 /**
- * min - return minimum value
- *
- * @b: a value index
- * @n: the size
- * Return: the minimum of both
- */
-size_t min(size_t b, size_t n)
-{
-	if (b < n)
-		return (b);
-	return (n);
-}
-
-
-/**
  * jump_search - search for a value in an array using jump search algorithm
  *
  * @array: an array of integers
@@ -27,29 +12,26 @@ size_t min(size_t b, size_t n)
  */
 int jump_search(int *array, size_t size, int value)
 {
-	size_t a, b;
-
-	a = 0;
-	b = sqrt(size);
+	size_t a, b, i;
 
 	if (array == NULL)
 		return (-1);
-	while (array[min(b, size) - 1] < value)
+
+	a = 0;
+	b = 0;
+	while (b < size && array[b] < value)
 	{
-		printf("Value checked array[%li] = [%i]\n", a, array[a]);
+		printf("Value checked array[%li] = [%i]\n", b, array[b]);
 		a = b;
-		b += sqrt(size);
-		if (a >= size)
-			return (-1);
+		b = b + sqrt(size);
 	}
 	printf("Value found between indexes [%li] and [%li]\n", a, b);
-	while (array[a] < value)
+	b = (b < size) ? b : size - 1;
+	for (i = a; i <= b; i++)
 	{
-		a += 1;
-		if (a == min(b, size))
-			return (-1);
+		printf("Value checked array[%li] = [%i]\n", i, array[i]);
+		if (array[i] == value)
+			return ((int)i);
 	}
-	if (array[a] == value)
-		return (a);
 	return (-1);
 }
