@@ -1,0 +1,7 @@
+# A makefile to create an executable for school
+
+all: school
+
+# Build the executable
+school: main.c school.c m.h
+	gcc main.c school.c  -o school

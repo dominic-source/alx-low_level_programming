@@ -1,0 +1,35 @@
+# This program will recompile executable files when there are changes
+
+# The compiler that will be used
+CC = gcc
+
+# The source files
+SRC = main.c school.c
+
+# The object files
+OBJ = $(SRC:.c=.o)
+
+# The name of the executable
+NAME = school
+
+# Files to remove
+RM = rm -f
+
+# GCC flags
+CFLAGS = -Wall -Werror -Wextra -pedantic
+
+all: $(NAME)
+
+$(NAME): $(OBJ)
+	$(CC) $(CFLAGS) $(OBJ) -o $@
+
+clean:
+	$(RM) *~ \.*.swp $(NAME)
+
+oclean:
+	$(RM) $(OBJ)
+
+fclean: clean
+	$(RM) $(OBJ)
+
+re: fclean all

@@ -1,13 +1,12 @@
-#include <stdio.h>
-
-int school(void);
+#include "m.h"
 
 /**
- * main - test main.c file
- * Return: 0
+ * main - Entry point
+ *
+ * Return: Always 
  */
-int main(void) 
+int main(void)
 {
-	school();
-	return (0);
+	print_school();
+	return (EXIT_SUCCESS);
 }
