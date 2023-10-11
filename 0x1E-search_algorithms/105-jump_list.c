@@ -12,20 +12,21 @@
 listint_t *jump_list(listint_t *list, size_t size, int value)
 {
 	listint_t *pnode = NULL;
-	size_t jump = sqrt(size);
+	size_t jump = sqrt(size), i;
 
 	if (list == NULL)
 		return (NULL);
 
-	printf("List :\n");
 	while (list->n < value && list->next != NULL)
 	{
 		pnode = list;
-		printf("Index[%li] = [%i]\n", pnode->index, pnode->n);
-		*list = *(list + jump);
+		for (i = 0; i < jump && list->next != NULL; i++)
+			list = list->next;
+		printf("Value checked at index [%li] = [%i]\n", list->index, list->n);
 	}
-	printf("i got here\n");
-	while (pnode != NULL && pnode->index < list->index )
+	printf("Value found between indexes [%li] and [%li]\n",
+			pnode->index, list->index);
+	while (pnode != NULL && pnode->index <= list->index)
 	{
 		printf("Value checked at index [%li] = [%i]\n", pnode->index, pnode->n);
 		if (pnode->n == value)
