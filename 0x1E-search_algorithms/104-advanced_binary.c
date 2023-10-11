@@ -23,9 +23,9 @@ int advance_binary_search(int *array, size_t lower, size_t upper, int value)
 
 	if (array[mid] == value)
 	{
-		if (mid != lower && array[mid - 1] == value)
-			return (advance_binary_search(array, lower, mid - 1, value));
-		return (mid);
+		if (mid == lower && array[mid - 1] != value)
+			return (mid);
+		return (advance_binary_search(array, lower, mid, value));
 	}
 	else if (array[mid] < value)
 		return (advance_binary_search(array, mid + 1, upper, value));
