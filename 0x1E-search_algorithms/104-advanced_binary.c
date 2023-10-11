@@ -23,16 +23,13 @@ int advance_binary_search(int *array, size_t lower, size_t upper, int value)
 
 	if (array[mid] == value)
 	{
-		if (mid == lower || array[mid - 1] != value)
-			return (mid);
-		upper = mid;
+		if (mid != lower && array[mid - 1] == value)
+			return (advance_binary_search(array, lower, mid, value));
+		return (mid);
 	}
 	else if (array[mid] < value)
-		lower = mid + 1;
-	else
-		upper = mid - 1;
-
-	return (advance_binary_search(array, lower, upper, value));
+		return (advance_binary_search(array, mid + 1, upper, value));
+	return (advance_binary_search(array, lower, mid - 1, value));
 }
 
 
